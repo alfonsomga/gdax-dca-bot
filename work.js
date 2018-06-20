@@ -20,9 +20,7 @@ const buy = (coinSymbol, amt) => {
     product_id: `${coinSymbol}-${fiatCurrency}`,
   };
   authedClient.buy(buyParams, (error, response, data) => {
-    if (sandboxMode) {
-      console.log(data);
-    }
+    console.log(data);
   });
 };
 
