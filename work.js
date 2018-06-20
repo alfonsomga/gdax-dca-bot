@@ -36,13 +36,14 @@ const rawInterval = interval =>
   : console.log('Scheduling failed: Invalid investment interval (check your .env file to make sure the investment intervals are correct)')
 
 
-// Schedule buys and tack on a randomized, artificial delay lasting up to 1 minute
+// Schedule buys
 const coinOn = (coinSymbol, amt, interval) => {
   schedule.scheduleJob(rawInterval(interval), () => {
-    const randomDelay = Math.floor(Math.random() * 60) + 1;
+    buy(coinSymbol, amt);
+    /* const randomDelay = Math.floor(Math.random() * 60) + 1;
     setTimeout(() => {
       buy(coinSymbol, amt);
-    }, randomDelay * 1000);
+    }, randomDelay * 1000); */
   });
 };
 
