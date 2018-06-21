@@ -43,6 +43,7 @@ const coinOn = (coinSymbol, amt, interval) => {
       buy(coinSymbol, amt);
     }, randomDelay * 1000); */
   });
+  console.log('Job Scheduled.');
 };
 
 // Turn coins on if their interval investment amounts meet the GDAX trade rules minimum
